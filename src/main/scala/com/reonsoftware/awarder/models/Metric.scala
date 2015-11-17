@@ -1,4 +1,4 @@
-package com.reonsoftware.awarder
+package com.reonsoftware.awarder.models
 
 /**
   * This class represents data for the activity; it includes a type (fuel, distance, etc.) as well as numerical
