@@ -1,8 +1,8 @@
-package com.reonsoftware.awarder
+package com.reonsoftware.awarder.utilities
 
 import java.net.URI
 import java.nio.charset.Charset
-import java.nio.file.{Paths, Files}
+import java.nio.file.{Files, Paths}
 
 /**
   * @author Jon Onstott

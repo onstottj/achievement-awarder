@@ -1,4 +1,4 @@
-package com.reonsoftware.awarder
+package com.reonsoftware.awarder.utilities
 
 import java.text.SimpleDateFormat
 

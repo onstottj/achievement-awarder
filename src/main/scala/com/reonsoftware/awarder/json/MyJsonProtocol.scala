@@ -1,9 +1,8 @@
 package com.reonsoftware.awarder.json
 
 import java.util.Date
-
-import com.reonsoftware.awarder.DateUtils
 import com.reonsoftware.awarder.models.{Activity, Metric}
+import com.reonsoftware.awarder.utilities.DateUtils
 import spray.json.{DefaultJsonProtocol, _}
 
 /**

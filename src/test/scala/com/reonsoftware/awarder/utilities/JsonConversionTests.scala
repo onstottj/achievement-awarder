@@ -1,6 +1,5 @@
 package com.reonsoftware.awarder.utilities
 
-import com.reonsoftware.awarder.DateUtils
 import com.reonsoftware.awarder.json.JsonUtils
 import com.reonsoftware.awarder.models.{Activity, Metric}
 import org.scalatest.FunSpec
