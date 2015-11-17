@@ -3,6 +3,7 @@ package com.reonsoftware.awarder.achievements
 import java.util.{TimeZone, Calendar}
 
 import com.reonsoftware.awarder.models.Activity
+import com.reonsoftware.awarder.utilities.DateUtils
 
 /**
   * The "CHRISTMAS" achievement. The requirements to earn this achievement are as follows:
@@ -37,7 +38,26 @@ object ChristmasAchievement extends Achievement {
   private def doesTotalQualify(activity: Activity): Boolean = activity.metric.data.sum > requiredTotal
 
   override def presentAward(activity: Activity): Unit = {
-    ???
+    // ASCII art, from http://patorjk.com/software/taag/#p=display&f=3D%20Diagonal&t=Christmas
+    println(
+      """
+        |  ,----..    ,---,                                    ___              ____
+        | /   /   \ ,--.' |               ,--,               ,--.'|_          ,'  , `.
+        ||   :     :|  |  :      __  ,-.,--.'|               |  | :,'      ,-+-,.' _ |
+        |.   |  ;. /:  :  :    ,' ,'/ /||  |,      .--.--.   :  : ' :   ,-+-. ;   , ||             .--.--.
+        |.   ; /--` :  |  |,--.'  | |' |`--'_     /  /    '.;__,'  /   ,--.'|'   |  || ,--.--.    /  /    '
+        |;   | ;    |  :  '   ||  |   ,',' ,'|   |  :  /`./|  |   |   |   |  ,', |  |,/       \  |  :  /`./
+        ||   : |    |  |   /' :'  :  /  '  | |   |  :  ;_  :__,'| :   |   | /  | |--'.--.  .-. | |  :  ;_
+        |.   | '___ '  :  | | ||  | '   |  | :    \  \    `. '  : |__ |   : |  | ,    \__\/: . .  \  \    `.
+        |'   ; : .'||  |  ' | :;  : |   '  : |__   `----.   \|  | '.'||   : |  |/     ," .--.; |   `----.   \
+        |'   | '/  :|  :  :_:,'|  , ;   |  | '.'| /  /`--'  /;  :    ;|   | |`-'     /  /  ,.  |  /  /`--'  /
+        ||   :    / |  | ,'     ---'    ;  :    ;'--'.     / |  ,   / |   ;/        ;  :   .'   \'--'.     /
+        | \   \ .'  `--''               |  ,   /   `--'---'   ---`-'  '---'         |  ,     .-./  `--'---'
+        |  `---`                         ---`-'                                      `--`---'
+      """.stripMargin)
+
+    println("Congratulations! You have earned the CHRISTMAS achievement for driving on "
+      + DateUtils.simpleDateFormat.format(activity.date) + ", using " + activity.metric.data.sum + " units of fuel.\n")
   }
 
 }

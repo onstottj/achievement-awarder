@@ -11,6 +11,16 @@ import java.nio.file.{Files, Paths}
 object FileUtils {
 
   /**
+    * Looks up the given resource on the classpath
+    */
+  def getResourceUri(resourcePath: String): URI = {
+    val url = getClass.getClassLoader.getResource(resourcePath)
+    if (url == null)
+      throw new IllegalArgumentException(s"The resource '$resourcePath' couldn't be found")
+    url.toURI
+  }
+
+  /**
     * Adapted from http://stackoverflow.com/a/326440/132374
     * @param fileUri the location of the file
     * @param encoding the file's encoding; you can use StandardCharsets.UTF_8, for example
